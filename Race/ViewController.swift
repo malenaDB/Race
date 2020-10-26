@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var purpleCar = Car() // Here, you are creating a new car.
+        
+        var blueCar = Car() // Here, you are creating a new car.
+        
+        var tealCar = Car() //Here, you are creating a new car.
     }
 
 
