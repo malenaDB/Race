@@ -21,7 +21,7 @@ class Car
     // initializers --> code for how do I create the car
     init() // Inside of the Init, you have to set/define the properties of the car.
     {
-        name = "A" // We are setting the name of the car.  The name of the car is whatever you named the car image.
+        name = "E" // We are setting the name of the car.  The name of the car is whatever you named the car image.
         lane = 1
         speed = 3.2
         getRandomSpeed() // This will update the speed to the random number that is generated in the getRandomSpeed function in the car's methods.
