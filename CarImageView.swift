@@ -16,7 +16,7 @@ class CarImageView: UIImageView // give your class a name, and make it a subclas
     init(c: Car) // here, we are making an initializer where we pass in a Car
     {
         car = c // we are setting the variable car (above on line 14) to be whatever we put in as c in this initializer (you'll get a red error, but just click the fix button, and it will create the required intializer that is below)
-        super.init(image: UIImage(named: "A")) //here, you have to do the initializer for the UIImageView (which is an initializer that already exists as part of Swift).  you will get an error if you do not do this step!
+        super.init(image: UIImage(named: car.name)) //here, you have to do the initializer for the UIImageView (which is an initializer that already exists as part of Swift).  you will get an error if you do not do this step!
         
         let height = UIScreen.main.bounds.height // this will automatically figure out how tall is the screen of the device that you are using the app on
         self.frame = CGRect(x: 75 * car.lane, y: Int(height) - 100, width: 50, height: 100) // this puts the car at the bottom of the screen and makes it the proper size for how we want the app to be!
