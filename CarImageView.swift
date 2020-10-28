@@ -19,12 +19,12 @@ class CarImageView: UIImageView // give your class a name, and make it a subclas
         super.init(image: UIImage(named: car.name)) //here, you have to do the initializer for the UIImageView (which is an initializer that already exists as part of Swift).  you will get an error if you do not do this step!
         
         let height = UIScreen.main.bounds.height // this will automatically figure out how tall is the screen of the device that you are using the app on
-        self.frame = CGRect(x: 75 * car.lane, y: Int(height) - 100, width: 50, height: 100) // this puts the car at the bottom of the screen and makes it the proper size for how we want the app to be!
+        self.frame = CGRect(x: 60 * car.lane, y: Int(height) - 80, width: 40, height: 80) // this puts the car at the bottom of the screen and makes it the proper size for how we want the app to be!
     }
     
     func resetPositionAndSpeed() // this function will allow us to reset the cars to the beginning after the race is over
     {
-        self.center = CGPoint(x: center.x, y: UIScreen.main.bounds.height - 100)
+        self.center = CGPoint(x: center.x, y: UIScreen.main.bounds.height - 80)
         self.car.getRandomSpeed() // we will get a new random speed for each car so that there is a different winner for each race
     }
     

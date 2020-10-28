@@ -55,12 +55,15 @@ class ViewController: UIViewController {
     
     @IBAction func startRaceButton(_ sender: UIButton)
     {
+        view.backgroundColor = UIColor.white
+        
         // animate car1
         UIView.animate(withDuration: car1ImageView.car.speed, delay: 0, animations: {
             self.car1ImageView.center = CGPoint(x: self.car1ImageView.center.x, y: -100) // we want the car to keep the same x value, and we want the car to go off the screen on the y axis
         }, completion: {
             action in
             self.car1ImageView.resetPositionAndSpeed()
+            self.view.backgroundColor = UIColor.systemGray3
         })
         
         // animate car2
@@ -69,6 +72,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car2ImageView.resetPositionAndSpeed()
+            self.view.backgroundColor = UIColor.systemTeal
         })
         
         // animate car3
@@ -77,6 +81,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car3ImageView.resetPositionAndSpeed()
+            self.view.backgroundColor = UIColor.systemRed
         })
         
         // animate car4
@@ -85,6 +90,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car4ImageView.resetPositionAndSpeed()
+            self.view.backgroundColor = UIColor.systemGreen
         })
         
         // animate car5
@@ -93,6 +99,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car5ImageView.resetPositionAndSpeed()
+            self.view.backgroundColor = UIColor.systemYellow
         })
     }
     
