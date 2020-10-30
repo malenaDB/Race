@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var car4ImageView: CarImageView!
     var car5ImageView: CarImageView!
     
+    @IBOutlet weak var startLabel: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -52,10 +54,20 @@ class ViewController: UIViewController {
         view.addSubview(car5ImageView)
     }
     
+    func hideStartLabel()
+    {
+        self.startLabel.isHidden = true
+    }
     
-    @IBAction func startRaceButton(_ sender: UIButton)
+    func showStartLabel()
+    {
+        self.startLabel.isHidden = false
+    }
+    
+    @IBAction func startLabelTapped(_ sender: UITapGestureRecognizer)
     {
         view.backgroundColor = UIColor.white
+        hideStartLabel()
         
         // animate car1
         UIView.animate(withDuration: car1ImageView.car.speed, delay: 0, animations: {
@@ -63,6 +75,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car1ImageView.resetPositionAndSpeed()
+            self.startLabel.isHidden = false
             self.view.backgroundColor = UIColor.systemGray3
         })
         
@@ -72,6 +85,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car2ImageView.resetPositionAndSpeed()
+            self.showStartLabel()
             self.view.backgroundColor = UIColor.systemTeal
         })
         
@@ -81,6 +95,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car3ImageView.resetPositionAndSpeed()
+            self.showStartLabel()
             self.view.backgroundColor = UIColor.systemRed
         })
         
@@ -90,6 +105,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car4ImageView.resetPositionAndSpeed()
+            self.showStartLabel()
             self.view.backgroundColor = UIColor.systemGreen
         })
         
@@ -99,6 +115,7 @@ class ViewController: UIViewController {
         }, completion: {
             action in
             self.car5ImageView.resetPositionAndSpeed()
+            self.showStartLabel()
             self.view.backgroundColor = UIColor.systemYellow
         })
     }
